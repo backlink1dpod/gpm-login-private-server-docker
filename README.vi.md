@@ -61,9 +61,9 @@ chmod +x click-once-mac.sh
 docker-compose pull
 docker-compose up -d
 
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/.env
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/storage
-docker exec -it gpm-login-private-server-docker-web-1 php artisan key:generate
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/.env
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/storage
+docker exec -it gpm_login_private_server_web php artisan key:generate
 ```
 - Bước 6 (tùy chọn, khuyến nghị): Nếu bạn muốn lưu profile trên S3, đăng nhập vào private server (cổng mặc định 80) và cấu hình mục "Storage setting" của private server.
 - Bước 7 (tùy chọn): Bật Docker khởi động cùng máy tính
@@ -108,8 +108,8 @@ sudo ./restore-ubuntu-22-04.sh
 ## Khắc phục lỗi "Permission Denied" trên Web
 Mở terminal và chạy lệnh sau (có thể cần sử dụng sudo). Thay `gpm-login-private-server-docker` thành tên thư mục hiện tại
 ```
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/.env
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/storage
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/.env
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/storage
 ```
 
 ## Lỗi 500 sau khi cập nhật tự động trên docker

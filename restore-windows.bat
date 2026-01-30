@@ -11,8 +11,8 @@ for /f "tokens=1,* delims==" %%a in ('findstr /b "DB_PASSWORD=" .env') do set DB
 
 REM Lấy tên container MySQL và Web
 for %%I in (.) do set CURRENT_DIR=%%~nI
-set MYSQL_CONTAINER=%CURRENT_DIR%-mysql-1
-set WEB_CONTAINER=%CURRENT_DIR%-web-1
+set MYSQL_CONTAINER=gpm_login_private_server_mysql
+set WEB_CONTAINER=gpm_login_private_server_web
 
 REM Đường dẫn file backup và storage
 set BACKUP_DIR=%~dp0

@@ -59,15 +59,15 @@ timeout /t 5 /nobreak > nul
 
 for %%I in (.) do set CURRENT_DIR=%%~nI
 echo Current directory: %CURRENT_DIR%
-docker exec -it %CURRENT_DIR%-web-1 chmod 777 /var/www/html/.env
-docker exec -it %CURRENT_DIR%-web-1 chmod 777 /var/www/html/storage
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/.env
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/storage
 
 :: Check if APP_KEY is empty in .env file
 for /f "tokens=1,* delims==" %%a in ('findstr /b /c:"APP_KEY=" .env') do (
     if "%%b"=="" (
         :: Generate the APP_KEY
         echo create APP_KEY
-        docker exec -it %CURRENT_DIR%-web-1 php artisan key:generate
+        docker exec -it gpm_login_private_server_web php artisan key:generate
     )
 )
 

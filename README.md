@@ -62,9 +62,9 @@ Replace `gpm-login-private-server-docker` with the current folder name.
 docker-compose pull
 docker-compose up -d
 
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/.env
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/storage
-docker exec -it gpm-login-private-server-docker-web-1 php artisan key:generate
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/.env
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/storage
+docker exec -it gpm_login_private_server_web php artisan key:generate
 ```
 - Step 6: (optional, recommend): If you want to save the profile on S3, log in to the private server (default port 80) and configure the "Storage setting" in the web GUI.
 - Step 7 (optional): Enable Docker to start automatically on system startup
@@ -108,8 +108,8 @@ sudo ./restore-ubuntu-22-04.sh
 ## Fix "Permission Denied" Error on Web
 Open the terminal and run the following command (you may need to use sudo). Replace `gpm-login-private-server-docker` with the current folder name.
 ```
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/.env
-docker exec -it gpm-login-private-server-docker-web-1 chmod 777 /var/www/html/storage
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/.env
+docker exec -it gpm_login_private_server_web chmod 777 /var/www/html/storage
 ```
 
 ## Error 500 after automatic update on Docker

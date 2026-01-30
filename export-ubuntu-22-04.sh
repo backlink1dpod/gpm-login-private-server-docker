@@ -7,8 +7,8 @@ export DB_PASSWORD=$(grep -oP '^DB_PASSWORD=\K.*' .env)
 
 # Lấy tên container MySQL và Web
 CURRENT_DIR=$(basename "$PWD")
-MYSQL_CONTAINER="${CURRENT_DIR}-mysql-1"
-WEB_CONTAINER="${CURRENT_DIR}-web-1"
+MYSQL_CONTAINER="gpm_login_private_server_mysql"
+WEB_CONTAINER="gpm_login_private_server_web"
 
 # Kiểm tra nếu container MySQL tồn tại
 MYSQL_EXIST=$(sudo docker ps -a --filter "name=$MYSQL_CONTAINER" --format "{{.Names}}")
